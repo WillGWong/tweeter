@@ -15,11 +15,104 @@ html {
  */
 
 body {
+  font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   width: 90%;
+   align-content: center;
+   background-color: #f4f1ec;
+   text-align: center;
+ }
+
+ .post-tweet {
+   left: 50%;
+  border: 5px solid rgb(92, 92, 92);
+  margin-top: 15px;
+  margin-bottom: 30px;
+  height: 10em;
+  margin: 5em;
+  background-color: #f4f1ec;
+  
+ }
+
+ .post-tweet:hover {
+  box-shadow: 10px 10px;
+ }
+
+ .tweetheader {
+   height: 80px;
+ }
+
+ .tweet-profile {
+  display: inline-block;
+  float: left;
+  padding: 17px;
+ }
+
+ .tweetheader img {
+  display: inline-block;
+  height: 50px;
+  background-color: #f4f1ec;
+  float: left;
+  padding: 0;
+ }
+
+ .tweetheader .username {
+  display: inline-block;
+  font-size: 140%;
+  text-align: left;
+  margin-left: 20px
+ }
+
+ .tweetheader .userAt {
+   display: none;
+   float: right;
+   padding: 20px;
+ }
+
+ .post-tweet:hover .userAt {
+  display: inline-block;
+  color: gray;
+}
+
+ .post-tweet .tweetarticle {
+  border-bottom: 3.5px solid rgb(92, 92, 92);
+  background: transparent;
+  position: relative;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 600;
+ }
+
+ .footer {
+   height: 80px;
+ }
+
+ .datePosted {
+  font-size: 70%;
+  font-weight: bold;
+  position: relative;
+  text-align: left;
+  margin-left: 20px;
+}
+
+ .icons {
+   text-align: right;
+   margin-right: 20px;
+   top: 100px
+ }
+
+ #tweets-container {
+   position: relative;
+   left: 140px;
+   padding: 50px;
+   top: 100px
+ }

@@ -1,0 +1,33 @@
+.new-tweet {
+  position: relative;
+  top: 40px;
+  left: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#textbox {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 3.5px solid rgb(92, 92, 92);
+  width: 90%;
+  height: 2.5em;
+  line-height: 15px
+}
+
+#submit {
+  font-family: 'Bungee', cursive;
+  background-color:#4056A1;
+  color: #FFFFFF;
+  float: left;
+  margin: 1.73%;
+  width: 110px;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  float: right;
+  margin: 1.51%;
+  width: 7%;
+}
