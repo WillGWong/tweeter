@@ -60,10 +60,16 @@ const getDayMonth = function(timestamp) {
 const form = $('.new-tweet-form');
 
 form.on('submit', (evt) => {
+  $(".error").slideUp()
   evt.preventDefault();
   let formtext = form.serialize()
   if(formtext.length > 145) {
-    alert("Over 140 characters!")
+    $(".error").empty()
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;left:-5em'<></i>")
+    $(".error").append("  ERROR! Over 140 characters!  ")
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;right:-5em'<></i>")
+    $(".error").slideDown()
+    return
   } else { 
      $.ajax({
         url: '/tweets',
@@ -72,7 +78,11 @@ form.on('submit', (evt) => {
       })
         .done(() => loadTweets())
         .fail(err => {
-        alert('Failed to submit data');
+          $(".error").empty()
+          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;left:-5em'<></i>")
+          $(".error").append("  ERROR! No text!  ")
+          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;right:-5em'></i>")
+          $(".error").slideDown();
     });
   }
 });
@@ -89,5 +99,26 @@ const loadTweets = function(){
   });
 }
 loadTweets()
+
+
+$( ".fa-hand-point-down" ).click(function() {
+  $( ".new-tweet-form" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+});
+
+$(".fa-arrow-alt-circle-up").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+})
+
+$(window).scroll(function() {
+  if (document.documentElement.scrollTop > 200){
+  $(".to-top").css("display", "inline")
+  }
+  if (document.documentElement.scrollTop < 200){
+    $(".to-top").css("display", "none")
+    }
+})
 
 })

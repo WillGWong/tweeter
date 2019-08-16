@@ -32,12 +32,12 @@ body {
  }
 
  .post-tweet {
-   left: 50%;
+  left: 50%;
   border: 5px solid rgb(92, 92, 92);
   margin-top: 15px;
   margin-bottom: 30px;
-  height: 10em;
-  margin: 5em;
+  height: 11em;
+  margin: 2em;
   background-color: #f4f1ec;
   
  }
@@ -47,11 +47,12 @@ body {
  }
 
  .tweetheader {
+  display: block;
    height: 80px;
  }
 
  .tweet-profile {
-  display: inline-block;
+  display: block;
   float: left;
   padding: 17px;
  }
@@ -97,22 +98,62 @@ body {
  }
 
  .datePosted {
+  display: inline-block;
   font-size: 70%;
   font-weight: bold;
   position: relative;
-  text-align: left;
+  float: left;
   margin-left: 20px;
 }
 
  .icons {
-   text-align: right;
+   float: right;
    margin-right: 20px;
    top: 100px
  }
 
  #tweets-container {
-   position: relative;
    left: 140px;
-   padding: 50px;
-   top: 100px
+   padding: 10px;
+   word-wrap: break-word;
+
  }
+
+.error{
+  border: 6px solid red;
+  border-radius: 5px;
+  height: 2em;
+  position: relative;
+  left: 50px;
+  color: red;
+  font-size: 30px;
+  display:none;
+  margin: 5px;
+
+ }
+
+ .to-top {
+   display:none;
+   position: fixed;
+   color:blue;
+   z-index: 6;
+   right: 50px;
+   bottom: 100px;
+   border-radius: 50%;
+ }
+
+ .fa-arrow-alt-circle-up {
+  font-size:60px;
+ }
+
+ .fa-arrow-alt-circle-up:hover {
+   transform: scale(1.2);
+   color:orange;
+ }
+
+ @media all and (max-width: 615px) {
+  .writeout {display:none;}
+  .hand-down {left:0;top:-8px;font-size: 40px}
+  .post-tweet:hover .userAt {display: none;}
+
+}

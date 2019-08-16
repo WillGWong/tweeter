@@ -1,9 +1,9 @@
 #userheader {
+  display: inline-block;
   width: 100%;
   height: 400px;
-  vertical-align: relative;
-  color: #4f5a63;
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+  background-color: #854e42;
+  background-image: url("https://www.transparenttextures.com/patterns/white-wave.png");  
   margin-top: 120px
   
 }
@@ -13,7 +13,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 15%;
   padding: 1em;
 }
 
@@ -21,4 +20,18 @@ h2 {
   text-align: center;
   position: relative;
   bottom: 60px;
+  color: whitesmoke
+}
+
+@media all and (min-width: 1200px) {
+  #userheader {width: 25%; margin-top: 9em; transform: scale(0.8)}
+  .container {float: right; width: 67%; margin-top: 2em}
+  .error {top:90px;left:-10px}
+  .new-tweet {  margin-top: 3em;}
+
+}
+
+@media all and (max-width: 746px) {
+  .tweetfooter {display:none;}
+
 }

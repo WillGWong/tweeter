@@ -34,13 +34,12 @@
       <span>tweeter</span>
       <span class="writeout">
         Write out a new Tweet!
-        <div class="hand-down">
-      <i class='far fa-hand-point-down' style='font-size:24px;color:orange'></i>
-    </div>
       </span>
+      <div class="hand-down">
+        <button class='far fa-hand-point-down'></button>
+    </div>
     </nav>
 
-    <p></p>
 
     <header id="userheader">
       <div>
@@ -54,6 +53,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="error">
+      </section>
         <section class="new-tweet">
             <form class ="new-tweet-form" method="POST" action="/tweets">
               <textarea id="textbox" name="text" placeholder="What are you humming about?"></textarea>
@@ -65,6 +66,9 @@
           <div id="tweets-container">
           </div>
     </main>
+    <div class="to-top">
+        <i class='fas fa-arrow-alt-circle-up'></i>
+    </div>
 
   </body>
 </html>

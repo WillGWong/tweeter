@@ -19,9 +19,26 @@ nav {
 }
 
 .hand-down {
+  float: right;
   position: relative;
-  left: 100px;
+  left: 140px;
+  top: 20px;
   font-size: 24px;
-  color: orange;
   padding: 5px;
+  
+}
+
+.fa-hand-point-down {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+}
+
+.fa-hand-point-down:hover {
+  transform: scale(1.4);
+  color: orange
+}
+
+.new-tweet-form {
+  display: none
 }
