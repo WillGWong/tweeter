@@ -31,13 +31,15 @@
     <!-- Top nav bar (fixed) -->
     
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class="navright">
       <span class="writeout">
         Write out a new Tweet!
       </span>
       <div class="hand-down">
         <button class='far fa-hand-point-down'></button>
     </div>
+  </div>
     </nav>
 
 
@@ -58,8 +60,10 @@
         <section class="new-tweet">
             <form class ="new-tweet-form" method="POST" action="/tweets">
               <textarea id="textbox" name="text" placeholder="What are you humming about?"></textarea>
+              <div class="new-tweet-footer">
               <input id="submit" type="submit" value="Tweet" />
               <span id="charCount" class="counter">140</span>
+            </div>
             </form>
           </section>
           

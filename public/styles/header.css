@@ -4,7 +4,7 @@
   height: 400px;
   background-color: #854e42;
   background-image: url("https://www.transparenttextures.com/patterns/white-wave.png");  
-  margin-top: 120px
+  margin-top: 120px;
   
 }
 
@@ -20,7 +20,7 @@ h2 {
   text-align: center;
   position: relative;
   bottom: 60px;
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 @media all and (min-width: 1200px) {

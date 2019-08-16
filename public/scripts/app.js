@@ -65,9 +65,11 @@ form.on('submit', (evt) => {
   let formtext = form.serialize()
   if(formtext.length > 145) {
     $(".error").empty()
-    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;left:-5em'<></i>")
+    $(".error").css("display", "flex")
+    $(".error").css("justify-content", "space-evenly")
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
     $(".error").append("  ERROR! Over 140 characters!  ")
-    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;right:-5em'<></i>")
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
     $(".error").slideDown()
     return
   } else { 
@@ -79,9 +81,11 @@ form.on('submit', (evt) => {
         .done(() => loadTweets())
         .fail(err => {
           $(".error").empty()
-          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;left:-5em'<></i>")
+          $(".error").css("display", "flex")
+          $(".error").css("justify-content", "space-evenly")
+          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
           $(".error").append("  ERROR! No text!  ")
-          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;right:-5em'></i>")
+          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'></i>")
           $(".error").slideDown();
     });
   }
@@ -102,9 +106,7 @@ loadTweets()
 
 
 $( ".fa-hand-point-down" ).click(function() {
-  $( ".new-tweet-form" ).slideToggle( "slow", function() {
-    // Animation complete.
-  });
+  $( ".new-tweet-form" ).slideToggle( "slow");
 });
 
 $(".fa-arrow-alt-circle-up").click(function() {
@@ -113,11 +115,13 @@ $(".fa-arrow-alt-circle-up").click(function() {
 })
 
 $(window).scroll(function() {
-  if (document.documentElement.scrollTop > 200){
-  $(".to-top").css("display", "inline")
+  if (document.documentElement.scrollTop > 400){
+    $(".to-top").css("display", "inline")
+    $(".navright").css("display", "none")
   }
-  if (document.documentElement.scrollTop < 200){
+  if (document.documentElement.scrollTop < 400){
     $(".to-top").css("display", "none")
+    $(".navright").css("display", "inline")
     }
 })
 

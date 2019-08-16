@@ -1,9 +1,8 @@
 .new-tweet {
-  left: 140px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 5;
-  padding: 2em
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 #textbox {
@@ -11,9 +10,14 @@
   outline: 0;
   background: transparent;
   border-bottom: 3.5px solid rgb(92, 92, 92);
-  width: 90%;
   height: 2.5em;
   line-height: 15px;
+  width: 100%;
+}
+
+.new-tweet-footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 #submit {
@@ -30,4 +34,8 @@
   float: right;
   margin: 1.51%;
   width: 7%;
+}
+
+.new-tweet-form {
+  display: none;
 }
