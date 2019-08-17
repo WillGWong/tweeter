@@ -15,37 +15,38 @@ const renderTweets = function(tweets) {
 
 //template literal isnt "sanitary", use .text(data.name) to append on <div></div>
 const createTweetElement = function(tweet) {
-  let $tweet = `<article class="post-tweet">
+  const $article = $('<article>').attr('class', 'post-tweet');
+  const $header = $('<header>').attr('class', 'tweetheader');
+  const $div1 = $('<div>').attr('class', 'tweet-profile')
+  const $userPic = $('<img>').attr('src', tweet["user"]["avatars"])
+  const $username = $('<div>').attr('class', 'username').text(tweet.user.name);
+  const $div2 = $('<div>').attr('class', 'userAt').text(tweet.user.handle)
+  const $content = $('<p>').attr('class', 'tweetarticle').text(tweet.content.text);
+  const $footer = $('<footer>').attr('class', 'tweetfooter')
+  const $div3 = $('<div>').attr('class', 'datePosted').text(getDayMonth(tweet["created_at"]))
+  const $div4 = $('<div>').attr('class', 'icons')
+  const $flag = $('<i>').attr('class', 'fas fa-flag').attr('style', 'color:blue')
+  const $retweet = $('<i>').attr('class', 'fas fa-retweet').attr('style', 'color:blue')
+  const $heart = $('<i>').attr('class', 'fas fa-heart').attr('style', 'color:blue')
 
-  <header class="tweetheader">
-    <div class="tweet-profile">
-        <img src="${tweet["user"]["avatars"]}" /> 
-        <div class="username">
-            ${tweet["user"]["name"]}
-        </div>
-    </div>
-    <div class="userAt">
-      ${tweet["user"]["handle"]}
-    </div>
-  </header>
 
+  $article.append($header);
+  $header.append($div1)
+  $div1.append($userPic)
+  $div1.append($username)
+  $header.append($div2)
+  $article.append($content);
+  $article.append($footer)
+  $footer.append($div3)
+  $footer.append($div4)
+  $div4.append($flag)
+  $div4.append($retweet)
+  $div4.append($heart)
 
-    <p class="tweetarticle">
-      ${tweet["content"]["text"]}
-    </p>
-
-    <footer class="tweetfooter">
-      <div class="datePosted">${getDayMonth(tweet["created_at"])}</div>
-      <div class="icons">
-        <i class='fas fa-flag' style='color:blue'></i>
-        <i class='fa fa-retweet' style='color:blue'></i>
-        <i class='fas fa-heart' style='color:blue'></i>
-      </div>
-  </footer>   
-</article>`
-  return $tweet;
+  return $article;
   
 }
+
 
 const getDayMonth = function(timestamp) { 
   let date = new Date(timestamp);
