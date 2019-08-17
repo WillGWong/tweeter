@@ -2,6 +2,10 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+!["Screenshot of Large display](https://github.com/WillGWong/tweeter/blob/master/docs/large.png?raw=true)
+!["Screenshot of Medium display](https://github.com/WillGWong/tweeter/blob/master/docs/medium.png?raw=true)
+!["Screenshot of Small display](https://github.com/WillGWong/tweeter/blob/master/docs/small.png?raw=true)
+
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
 ## Getting Started
