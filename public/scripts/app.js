@@ -64,7 +64,7 @@ form.on('submit', (evt) => {
   $(".error").slideUp()
   evt.preventDefault();
   let formtext = form.serialize()
-  if(formtext.length > 145) {
+  if (validateTweet(formtext) === "over140") {
     $(".error").empty()
     $(".error").css("display", "flex")
     $(".error").css("justify-content", "space-evenly")
@@ -73,25 +73,39 @@ form.on('submit', (evt) => {
     $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
     $(".error").slideDown()
     return
-  } else { 
-     $.ajax({
-        url: '/tweets',
-        type: 'POST',
-        data: formtext 
-      })
-        .done(() => loadTweets())
-        .fail(err => {
-          $(".error").empty()
-          $(".error").css("display", "flex")
-          $(".error").css("justify-content", "space-evenly")
-          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
-          $(".error").append("  ERROR! No text!  ")
-          $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'></i>")
-          $(".error").slideDown();
-    });
   }
+  if (validateTweet(formtext) === "notweet") {
+    $(".error").empty()
+    $(".error").css("display", "flex")
+    $(".error").css("justify-content", "space-evenly")
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'<></i>")
+    $(".error").append("  ERROR! No text!  ")
+    $(".error").append("<i class='fas fa-radiation-alt' style='font-size:34px;color:red;position:relative;'></i>")
+    $(".error").slideDown();
+    return
+  }
+  if (validateTweet(formtext) === true) {
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: formtext 
+    })
+      .done(() => loadTweets())
+  }
+  $("#textbox").val("")
+  $("#charCount").html(140)
 });
 
+const validateTweet = function (tweet) {
+  if (tweet.length > 145) {
+    return "over140"
+  }
+  if (tweet.length === 5) {
+    return "notweet"
+  } else {
+    return true
+  }
+}
 
 const loadTweets = function(){
   $.ajax('/tweets', { method: 'GET' })
@@ -108,6 +122,7 @@ loadTweets()
 
 $( ".fa-hand-point-down" ).click(function() {
   $( ".new-tweet-form" ).slideToggle( "slow");
+  $("#textbox").focus()
 });
 
 $(".fa-arrow-alt-circle-up").click(function() {
